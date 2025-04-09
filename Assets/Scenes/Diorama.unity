@@ -293,7 +293,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b7c7e711c0e658444ba6275109fe1712, type: 2}
+  - {fileID: 2100000, guid: 5c3111f21575364489f3a63a246c4136, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -432,7 +432,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b7c7e711c0e658444ba6275109fe1712, type: 2}
+  - {fileID: 2100000, guid: 0fac1d1f3e7b6044e9a824f98562190d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1562,6 +1562,10 @@ PrefabInstance:
     - target: {fileID: 3150988339188328054, guid: 5a082cb57d8b17345b65526fce73fe63, type: 3}
       propertyPath: m_Name
       value: MeMySelfEye
+      objectReference: {fileID: 0}
+    - target: {fileID: 7140325147616300699, guid: 5a082cb57d8b17345b65526fce73fe63, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.62
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
