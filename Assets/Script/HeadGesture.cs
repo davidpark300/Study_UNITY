@@ -1,0 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class HeadGesture : MonoBehaviour
+{
+    public bool isFacingDown = false;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        isFacingDown = DetectFacingDown();
+    }
+
+    private bool DetectFacingDown()
+    {
+        return (CameraAngleFrontGround() < 60.0f);
+    }
+
+    private float CameraAngleFrontGround()
+    {
+        return Vector3.Angle(Vector3.down, Camera.main.transform.rotation * Vector3.forward);
+    }
+}
