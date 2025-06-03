@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.450621, g: 0.50059634, b: 0.5749982, a: 1}
+  m_IndirectSpecularColor: {r: 0.45062155, g: 0.50059706, b: 0.5749992, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -131,13 +131,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 240308562}
     m_Modifications:
+    - target: {fileID: 1482273387681276277, guid: 4d400c8b0b9a69f43850f1cd91672fd3, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6876588214780630181, guid: 4d400c8b0b9a69f43850f1cd91672fd3, type: 3}
       propertyPath: m_Name
       value: ReticleCursor
       objectReference: {fileID: 0}
     - target: {fileID: 6876588214780630181, guid: 4d400c8b0b9a69f43850f1cd91672fd3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7309776178025385842, guid: 4d400c8b0b9a69f43850f1cd91672fd3, type: 3}
       propertyPath: m_Pivot.x
@@ -2887,6 +2891,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 240308562}
     m_Modifications:
+    - target: {fileID: 1482273387681276277, guid: 4d400c8b0b9a69f43850f1cd91672fd3, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3539583440942179709, guid: 4d400c8b0b9a69f43850f1cd91672fd3, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3322,6 +3330,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1833867584}
     m_Modifications:
+    - target: {fileID: 1482273387681276277, guid: 4d400c8b0b9a69f43850f1cd91672fd3, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2458793913761503691, guid: 4d400c8b0b9a69f43850f1cd91672fd3, type: 3}
       propertyPath: m_Color.a
       value: 0.4509804
