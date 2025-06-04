@@ -40,4 +40,9 @@ public class Clicker : MonoBehaviour
     {
         return Input.GetKeyDown(KeyCode.Q);
     }
+
+    public bool eKeyClicked()
+    {
+        return Input.GetKeyDown(KeyCode.E);
+    }
 }
