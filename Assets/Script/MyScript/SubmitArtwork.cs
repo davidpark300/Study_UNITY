@@ -9,6 +9,7 @@ public class SubmitArtwork : MonoBehaviour
     private Sprite[] sprites;
     private int spriteIndex;
     private bool isFinished;
+    private Clicker clicker = new Clicker();
 
     private void Start()
     {
@@ -30,16 +31,18 @@ public class SubmitArtwork : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit) && (hit.collider.gameObject.tag == "SubmitArt"))
             {
-                if (spriteIndex < pictures.Length)
-                {
-                    GameObject art = hit.collider.gameObject;
-                    Renderer rend = art.GetComponent<Renderer>();
-                    Shader shader = Shader.Find("Standard");
-                    Material mat = new Material(shader);
-                    mat.mainTexture = sprites[spriteIndex].texture;
-                    rend.material = mat;
-                    spriteIndex++;
-                }
+                if (clicker.eKeyClicked())
+                    if (spriteIndex < pictures.Length)
+                    {
+                        GameObject art = hit.collider.gameObject;
+                        Renderer rend = art.GetComponent<Renderer>();
+                        Shader shader = Shader.Find("Standard");
+                        Material mat = new Material(shader);
+                        mat.mainTexture = sprites[spriteIndex].texture;
+                        rend.material = mat;
+                        spriteIndex++;
+                        //hit.collider.gameObject.GetComponent<MeshCollider>().enabled = false;
+                    }
             }
         }
     }
