@@ -6,6 +6,7 @@ public class Trampoline : MonoBehaviour
 {
     public float bounceForce = 1000.0f;
 
+    
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.gameObject.name);

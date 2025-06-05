@@ -5,11 +5,17 @@ using UnityEngine;
 public class DestroySelf : MonoBehaviour
 {
     // Update is called once per frame
+    private void Start()
+    {
+        StartCoroutine(destroyTime());
+    }
     void Update()
     {
-        if(transform.position.y < 0.5f)
-        {
-            Destroy(gameObject);
-        }       
+    }
+
+    private IEnumerator destroyTime()
+    {
+        yield return new WaitForSeconds(3.0f);
+        Destroy(gameObject);
     }
 }

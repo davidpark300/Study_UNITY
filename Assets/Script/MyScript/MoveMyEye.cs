@@ -5,7 +5,7 @@ using UnityEngine.InputSystem.XR;
 
 public class MoveMyEye : MonoBehaviour
 {
-    public float walkSpeed = 0.3f;
+    public float walkSpeed = 5.0f;
     public float xRotate = 0.5f;
     public float yRotate = 0.5f;
     private bool isWalking = false;
@@ -15,7 +15,8 @@ public class MoveMyEye : MonoBehaviour
 
     public float bounceForce = 0.0f;
     private float verticalVelocity = 0.0f;
-    private float gravity = 9.8f;
+    public float gravity = 9.8f;
+    private Vector3 moveDirection = Vector3.zero;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,13 +32,20 @@ public class MoveMyEye : MonoBehaviour
 
     private void eyeWalkingAndJumping()
     {
+    
         if (clicker.mouseLeftClicked())
         {
+            Debug.Log(isWalking);
             isWalking = !isWalking;
         }
         if (isWalking)
         {
-            characterController.SimpleMove(Camera.main.transform.forward * walkSpeed + Camera.main.transform.up * verticalVelocity);
+            moveDirection = Camera.main.transform.forward * walkSpeed;
+            //characterController.SimpleMove(Camera.main.transform.forward * walkSpeed + Camera.main.transform.up * verticalVelocity);
+        }
+        else
+        {
+            moveDirection = Vector3.zero;
         }
         if (characterController.isGrounded)
         {
@@ -49,7 +57,10 @@ public class MoveMyEye : MonoBehaviour
             verticalVelocity = bounceForce * 0.02f;
             bounceForce = 0.0f;
         }
+        moveDirection.y = verticalVelocity;
         verticalVelocity -= gravity * Time.deltaTime;
+        characterController.Move(moveDirection * Time.deltaTime);
+        
     }
 
     private void eyeRotating()

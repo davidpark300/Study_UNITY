@@ -9,6 +9,8 @@ TagManager:
   - Artwork
   - SubmitArt
   - Ball
+  - Wall
+  - Bullet
   layers:
   - Default
   - TransparentFX

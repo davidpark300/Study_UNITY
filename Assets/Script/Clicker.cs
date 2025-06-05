@@ -45,4 +45,9 @@ public class Clicker : MonoBehaviour
     {
         return Input.GetKeyDown(KeyCode.E);
     }
+
+    public bool rKeyClicked()
+    {
+        return Input.GetKeyDown(KeyCode.R);
+    }
 }
