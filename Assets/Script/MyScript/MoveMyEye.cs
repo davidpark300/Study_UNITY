@@ -13,6 +13,9 @@ public class MoveMyEye : MonoBehaviour
     private Clicker clicker = new Clicker();
     private CharacterController characterController;
 
+    public float bounceForce = 0.0f;
+    private float verticalVelocity = 0.0f;
+    private float gravity = 9.8f;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +25,11 @@ public class MoveMyEye : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        eyeWalking();
+        eyeWalkingAndJumping();
         eyeRotating();
     }
 
-    private void eyeWalking()
+    private void eyeWalkingAndJumping()
     {
         if (clicker.mouseLeftClicked())
         {
@@ -34,8 +37,19 @@ public class MoveMyEye : MonoBehaviour
         }
         if (isWalking)
         {
-            characterController.SimpleMove(Camera.main.transform.forward * walkSpeed);
+            characterController.SimpleMove(Camera.main.transform.forward * walkSpeed + Camera.main.transform.up * verticalVelocity);
         }
+        if (characterController.isGrounded)
+        {
+            verticalVelocity = 0.0f;
+        }
+        if (bounceForce != 0.0f)
+        {
+            Debug.Log("มกวมทย : "+bounceForce);
+            verticalVelocity = bounceForce * 0.02f;
+            bounceForce = 0.0f;
+        }
+        verticalVelocity -= gravity * Time.deltaTime;
     }
 
     private void eyeRotating()

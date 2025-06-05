@@ -12,15 +12,36 @@ public class BallRaining : MonoBehaviour
     public float rangeMinZ = -10.0f;
     public float rangeMaxZ = 10.0f;
     private float nextBallTime = 0.0f;
-
+    private float tempTime = 0.0f;
+    private float stopBallTime = 3.0f;
+    private bool stopFlag = false;
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > nextBallTime)
+        tempTime = Time.time + fireInterval;
+        if (!stopFlag)
         {
-            nextBallTime = Time.time + fireInterval;
-            Vector3 position = new Vector3(Random.Range(rangeMinX, rangeMaxX), startHeight, Random.Range(rangeMinZ, rangeMaxZ));
-            Instantiate(ball, position, Quaternion.identity);
+            if (Time.time > nextBallTime)
+            {
+                nextBallTime = tempTime;
+                //nextBallTime = Time.time + fireInterval;
+                Vector3 position = new Vector3(Random.Range(rangeMinX, rangeMaxX), startHeight, Random.Range(rangeMinZ, rangeMaxZ));
+                Instantiate(ball, position, Quaternion.identity);
+                if (Time.time > 3.0f)
+                {
+                    stopFlag = true;
+                }
+            }
         }
+        else
+        {
+            StartCoroutine(stopBall());
+        }
+    }
+
+    private IEnumerator stopBall()
+    {
+        yield return new WaitForSeconds(stopBallTime);
+        stopFlag = false;
     }
 }

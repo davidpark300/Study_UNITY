@@ -8,6 +8,7 @@ public class Trampoline : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.gameObject.name);
         Rigidbody rb = other.GetComponent<Rigidbody>();
         if (rb != null)
         {
@@ -15,7 +16,7 @@ public class Trampoline : MonoBehaviour
         }
         else
         {
-            HeadLookWalkBounce locomotor = other.GetComponent<HeadLookWalkBounce>();
+            MoveMyEye locomotor = other.GetComponent<MoveMyEye>();
             if (locomotor != null)
             {
                 locomotor.bounceForce = bounceForce;

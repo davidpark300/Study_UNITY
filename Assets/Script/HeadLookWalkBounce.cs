@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class HeadLookWalkBounce : MonoBehaviour
 {
-    public float velocity = 0.7f;
+    public float velocity = 5.0f;
     public bool walking = false;
     public float gravity = 9.8f;
     public float bounceForce = 0.0f;
@@ -17,7 +17,7 @@ public class HeadLookWalkBounce : MonoBehaviour
     }
     void Update()
     {
-        if (clicker.clicked())
+        if (clicker.mouseLeftClicked())
         {
             walking = !walking;
         }
