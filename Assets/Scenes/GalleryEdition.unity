@@ -6284,10 +6284,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7309776178025385842, guid: 4d400c8b0b9a69f43850f1cd91672fd3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1638002641}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6876588214780630181, guid: 4d400c8b0b9a69f43850f1cd91672fd3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 461547100}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d400c8b0b9a69f43850f1cd91672fd3, type: 3}
 --- !u!224 &461547095 stripped
 RectTransform:
@@ -6299,19 +6296,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6876588214780630181, guid: 4d400c8b0b9a69f43850f1cd91672fd3, type: 3}
   m_PrefabInstance: {fileID: 461547094}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &461547100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 461547096}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8c2605aae47e4f43b8e7e632a281c36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  invenObject: {fileID: 1638002640}
 --- !u!1 &469011172
 GameObject:
   m_ObjectHideFlags: 0
@@ -14503,8 +14487,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 6
-  xRotate: 0.5
-  yRotate: 0.5
+  xRotate: 0.2
+  yRotate: 0.2
   bounceForce: 0
   gravity: 9.8
 --- !u!114 &999426242

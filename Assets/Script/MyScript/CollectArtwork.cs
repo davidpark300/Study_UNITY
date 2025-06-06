@@ -41,8 +41,8 @@ public class CollectArtwork : MonoBehaviour
         RaycastHit hit; // 장애물 뒤에 있을 때는 광선이 맞은 판정이 되면 안됨
         if (collectPermission)
         {
-
-            if (Physics.Raycast(ray, out hit) && (hit.collider.gameObject.tag == "Artwork") && artCount < 9) // 광선이 hit 여부 체크하고 hit한 오브젝트가 Artwork 태그인 경우
+            // 광선이 hit 여부 체크하고 hit한 오브젝트가 Artwork 태그인 경우
+            if (Physics.Raycast(ray, out hit) && (hit.collider.gameObject.tag == "Artwork") && artCount < 9) 
             {
                 if (countDown > 0.0f)   // 카운트 다운이 0이 아닐 때
                 {
